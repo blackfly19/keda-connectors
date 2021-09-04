@@ -34,6 +34,8 @@ jobs:
     if: contains(needs.check.outputs.packages, 'kafkachanges')
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout the current repo
+        uses: actions/checkout@v2
       - name: Install Kind Cluster
         run: |
           curl -Lo ./kind $KIND_URL/$KIND_VER/$KIND_ENV      
@@ -117,6 +119,8 @@ jobs:
     if: contains(needs.check.outputs.packages, 'rabbitmqchanges')
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout the current repo
+        uses: actions/checkout@v2
       - name: Install Kind Cluster
         run: |
           curl -Lo ./kind $KIND_URL/$KIND_VER/$KIND_ENV      
@@ -186,6 +190,8 @@ jobs:
     if: contains(needs.check.outputs.packages, 'sqschanges')
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout the current repo
+        uses: actions/checkout@v2
       - name: Install Kind Cluster
         run: |
           curl -Lo ./kind $KIND_URL/$KIND_VER/$KIND_ENV      
